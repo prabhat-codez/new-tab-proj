@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+    :root,
+    html[data-theme='dark'] {
+        --background: 240 10% 4%;
+        --background-alt: 0 0% 19%;
+        --foreground: 240 5% 96%;
+        --card: 0 0% 11%;
+        --card-hover: 0 0% 16%;
+        --card-foreground: 0 0% 95%;
+        --muted: 0 0% 57%;
+        --destructive: 357 79% 47%;
+        --destructive-foreground: 270 15% 95%;
+    }
+
+    :root,
+    html[data-theme='light'] {
+        --background: 0 0% 100%;
+        --background-alt: 0 0% 88%;
+        --foreground: 240 10% 4%;
+        --card: 0 0% 95%;
+        --card-hover: 0 0% 86%;
+        --card-foreground: 0 0% 11%;
+        --muted: 0 0% 57%;
+        --destructive: 357 79% 47%;
+        --destructive-foreground: 270 14% 95%;
+    }
+
+}
+
+
+@layer base {
+    body {
+        @apply bg-background text-foreground font-notoSerif;
+    }
+
+    * ::-webkit-scrollbar {
+        @apply fixed h-1 w-[3px];
+    }
+
+    * ::-webkit-scrollbar-track {
+        @apply mx-1 rounded-md bg-transparent my-1;
+    }
+
+    * ::-webkit-scrollbar-thumb {
+        @apply cursor-pointer rounded-md bg-card-foreground/20;
+    }
+}
+
+
+@layer utilities {
+
+    .text-shadow-light {
+        text-shadow: rgba(255, 255, 255, 0.9) 1px 1px 15px, rgba(255, 255, 255, 0.9) -1px -1px 15px, rgba(255, 255, 255, 0.9) 1px -1px 15px, rgba(255, 255, 255, 0.9) -1px 1px 15px;
+    }
+
+    .text-shadow-dark {
+        text-shadow: rgba(0, 0, 0, 0.9) 1px 1px 15px, rgba(0, 0, 0, 0.9) -1px -1px 15px, rgba(0, 0, 0, 0.9) 1px -1px 15px, rgba(0, 0, 0, 0.9) -1px 1px 15px;
+    }
+}
